@@ -11,10 +11,24 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./modules/home/home.module').then((m) => m.HomeModule),
   },
+  {
+    path: 'orders',
+    loadChildren: () =>
+      import('./modules/orders/orders.module').then((m) => m.OrdersModule),
+  },
   // {
-  //     path: 'profile',
-  //     loadChildren: () => import('./modules/profile/profile.module').then(m => m.ProfileModule)
+  //     path: 'products',
+  //     loadChildren: () => import('./modules/products/products.module').then(m => m.ProductsModule)
   // },
+  // {
+  //     path: 'customers',
+  //     loadChildren: () => import('./modules/customers/customers.module').then(m => m.CustomersModule)
+  // },
+  // {
+  //     path: 'invoices',
+  //     loadChildren: () => import('./modules/invoices/invoices.module').then(m => m.InvoicesModule)
+  //
+
   // {
   //     path: 'settings',
   //     loadChildren: () => import('./modules/settings/settings.module').then(m => m.SettingsModule)
