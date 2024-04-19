@@ -1,3 +1,9 @@
 .card {
   width: 95%;
 }
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

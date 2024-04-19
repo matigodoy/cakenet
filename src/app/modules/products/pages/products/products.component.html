@@ -18,8 +18,9 @@
                 <img mat-card-md-image [src]="product.imagen" />
               </mat-card-title-group>
             </mat-card-header>
+            <!-- Card content with ellipsis, only 1 line of text is displayed. -->
             <mat-card-content>
-              <p>{{ product.descripcion }}</p>
+              <p class="ellipsis">{{ product.descripcion }}</p>
             </mat-card-content>
             <mat-card-actions align="end">
               <button

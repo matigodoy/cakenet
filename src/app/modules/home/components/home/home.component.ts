@@ -8,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -22,6 +23,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatListModule,
     MatDividerModule,
     MatMenuModule,
+    RouterModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

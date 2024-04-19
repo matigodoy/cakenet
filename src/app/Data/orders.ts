@@ -16,7 +16,7 @@ export const orders: Pedido[] = [
       productos: [
         {
           id: 1,
-          imagen: 'https://via.placeholder.com/150',
+          imagen: 'https://picsum.photos/150',
           nombre: 'Producto 1',
           codigo: 1,
           precio: [
@@ -56,7 +56,7 @@ export const orders: Pedido[] = [
       subtotal: 100,
       producto: {
         id: 1,
-        imagen: 'https://via.placeholder.com/150',
+        imagen: 'https://picsum.photos/150',
         nombre: 'Producto 1',
         codigo: 1,
         precio: [
@@ -162,23 +162,26 @@ export const orders: Pedido[] = [
 export const productos: Producto[] = [
   {
     id: 1,
-    imagen: 'https://via.placeholder.com/150',
-    nombre: 'Producto 1',
+    imagen:
+      'https://assets.elgourmet.com/wp-content/uploads/2023/03/cover_fsr8al91ct_confeti-1024x683.jpg.webp',
+    nombre: 'Pastel violeta de cumpleaños',
     codigo: 1,
     precio: [
       {
         id: 1,
-        monto: 100,
+        monto: 350,
         fecha: new Date('2021-01-01'),
       },
     ],
-    descripcion: 'Descripcion 1',
+    descripcion:
+      'Este pastel es ideal para cumpleaños de niñas, es muy colorido y delicioso',
     diasPreparacion: 1,
   },
   {
     id: 2,
-    imagen: 'https://via.placeholder.com/150',
-    nombre: 'Producto 2',
+    imagen:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgeTt9DfzIf2naa9sz6MC9OqqWU6WmGaoIEHtadv_Xtg&s',
+    nombre: 'Pastel nojaio',
     codigo: 2,
     precio: [
       {
@@ -187,13 +190,15 @@ export const productos: Producto[] = [
         fecha: new Date('2021-01-01'),
       },
     ],
-    descripcion: 'Descripcion 2',
+    descripcion:
+      'Para los amantes de lo simple, este pastel es ideal para cualquier ocasión',
     diasPreparacion: 2,
   },
   {
     id: 3,
-    imagen: 'https://via.placeholder.com/150',
-    nombre: 'Producto 3',
+    imagen:
+      'https://img.buzzfeed.com/buzzfeed-static/static/2017-10/26/11/asset/buzzfeed-prod-fastlane-01/sub-buzz-9368-1509033057-12.jpg?downsize=900:*&output-format=auto&output-quality=auto',
+    nombre: 'Pastel disney',
     codigo: 3,
     precio: [
       {
@@ -202,13 +207,14 @@ export const productos: Producto[] = [
         fecha: new Date('2021-01-01'),
       },
     ],
-    descripcion: 'Descripcion 3',
+    descripcion: 'Este pastel es ideal para cumpleaños de niños',
     diasPreparacion: 3,
   },
   {
     id: 4,
-    imagen: 'https://via.placeholder.com/150',
-    nombre: 'Producto 4',
+    imagen:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVCYh4GPyVOzSQUM4UvOuq50cGxXLpQeHG14RfpmDCqA&s',
+    nombre: 'Veinteañero',
     codigo: 4,
     precio: [
       {
@@ -217,13 +223,14 @@ export const productos: Producto[] = [
         fecha: new Date('2021-01-01'),
       },
     ],
-    descripcion: 'Descripcion 4',
+    descripcion: 'Este pastel es ideal para cumpleaños de veinteañeros',
     diasPreparacion: 4,
   },
   {
     id: 5,
-    imagen: 'https://via.placeholder.com/150',
-    nombre: 'Producto 5',
+    imagen:
+      'https://i.pinimg.com/236x/25/31/43/2531431fb718ba8d24cdd67b497cca4a.jpg',
+    nombre: 'Omaeo wa',
     codigo: 5,
     precio: [
       {
@@ -232,13 +239,14 @@ export const productos: Producto[] = [
         fecha: new Date('2021-01-01'),
       },
     ],
-    descripcion: 'Descripcion 5',
+    descripcion: 'Muy rico y dulce, ideal para cualquier ocasión',
     diasPreparacion: 5,
   },
   {
     id: 6,
-    imagen: 'https://via.placeholder.com/150',
-    nombre: 'Producto 6',
+    imagen:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGYmtDamTAK-TEHnbVX_6kAGT55Tf-dDCBeXP2dV9HeQ&s',
+    nombre: 'Drunky Kong',
     codigo: 6,
     precio: [
       {
@@ -247,13 +255,14 @@ export const productos: Producto[] = [
         fecha: new Date('2021-01-01'),
       },
     ],
-    descripcion: 'Descripcion 6',
+    descripcion: 'Ideal para cumpleaños de adultos',
     diasPreparacion: 6,
   },
   {
     id: 7,
-    imagen: 'https://via.placeholder.com/150',
-    nombre: 'Producto 7',
+    imagen:
+      'https://img.buzzfeed.com/buzzfeed-static/static/2017-10/26/16/tmp/buzzfeed-prod-fastlane-01/tmp-name-2-29836-1509049610-5_dblbig.jpg?resize=1200:*',
+    nombre: 'Señora de los pasteles',
     codigo: 7,
     precio: [
       {
@@ -262,13 +271,14 @@ export const productos: Producto[] = [
         fecha: new Date('2021-01-01'),
       },
     ],
-    descripcion: 'Descripcion 7',
+    descripcion: 'Ideal para cumpleaños de señoras',
     diasPreparacion: 7,
   },
   {
     id: 8,
-    imagen: 'https://via.placeholder.com/150',
-    nombre: 'Producto 8',
+    imagen:
+      'https://i.pinimg.com/236x/7d/11/66/7d11667a374524bf814a851335d43ec5.jpg',
+    nombre: 'Que miedo',
     codigo: 8,
     precio: [
       {
@@ -277,7 +287,7 @@ export const productos: Producto[] = [
         fecha: new Date('2021-01-01'),
       },
     ],
-    descripcion: 'Descripcion 8',
+    descripcion: 'Ideal para cumpleaños de halloween',
     diasPreparacion: 8,
   },
 ];

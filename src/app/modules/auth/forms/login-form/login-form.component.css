@@ -1,5 +1,26 @@
 .form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form_field {
+  width: 100%;
+}
+
+.container {
+  /* Esta clase hace referencia a la página completa, la que agrupa ".card". Debe alinear en el centro los elementos hijos. */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
