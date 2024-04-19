@@ -1,0 +1,94 @@
+<app-layout>
+  <!-- Tarjeta que muestra los detalles del pedido en base al objeto pedido -->
+  @if (order) {
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Detalle del pedido</mat-card-title>
+      <mat-card-subtitle>Detalles del pedido</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <mat-icon matListItemIcon>shopping_cart</mat-icon>
+          <div matListItemTitle>Producto</div>
+          <div matListItemLine>
+            <span
+              >{{ order.producto.producto.nombre }} ({{
+                order.producto.producto.codigo
+              }})</span
+            >
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon matListItemIcon>payment</mat-icon>
+          <div matListItemTitle>Forma de pago</div>
+          <div matListItemLine>Tarjeta de crédito</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>attach_money</mat-icon>
+          <div matListItemTitle>Total</div>
+          <div matListItemLine>{{ order.pago.montoTotal | currency }}</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>local_shipping</mat-icon>
+          <div matListItemTitle>Estado del pedido</div>
+          <div matListItemLine>
+            {{ order.estados[order.estados.length - 1].estado }}
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>date_range</mat-icon>
+          <div matListItemTitle>Fecha de entrega</div>
+          <div matListItemLine>
+            {{ order.fechaDeseadaEntrega | date : "dd/MM/yyyy" }}
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>location_on</mat-icon>
+          <div matListItemTitle>Dirección de entrega</div>
+          <div matListItemLine>
+            {{
+              order.envio.direccion.calle +
+                " " +
+                order.envio.direccion.altura +
+                " (" +
+                order.envio.direccion.cp +
+                ")"
+            }}
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-stroked-button color="primary" [routerLink]="['/orders']">
+        Regresar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  } @else {
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Detalle del pedido</mat-card-title>
+      <mat-card-subtitle>Detalles del pedido</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <mat-icon matListItemIcon>error</mat-icon>
+          <div matListItemTitle>¡Ups!</div>
+          <div matListItemLine>
+            No se encontró el pedido solicitado. Por favor, verifica el número
+            de pedido.
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-stroked-button color="primary" [routerLink]="['/orders']">
+        Regresar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  }
+</app-layout>
