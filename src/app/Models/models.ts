@@ -16,7 +16,7 @@ export interface Ciudad {
 }
 
 export interface Direccion {
-  id: number;
+  id?: number;
   calle: string;
   altura: number;
   ciudad: Ciudad;
@@ -135,7 +135,7 @@ export interface Pasteleria {
 }
 
 export interface Pedido {
-  id: number;
+  id?: number;
   numPedido: number;
   producto: DetallePedido;
   pasteleria: Pasteleria;

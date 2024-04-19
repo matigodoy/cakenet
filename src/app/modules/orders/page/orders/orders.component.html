@@ -5,7 +5,14 @@
       <mat-card-subtitle>Aquí podrás realizar nuevos pedidos</mat-card-subtitle>
     </mat-card-header>
     <mat-card-actions align="end">
-      <button mat-stroked-button color="primary">Nuevo</button>
+      <button
+        mat-stroked-button
+        color="primary"
+        [routerLink]="['/products']"
+        routerLinkActive="router-link-active"
+      >
+        Nuevo
+      </button>
     </mat-card-actions>
   </mat-card>
   <mat-card>
@@ -17,7 +24,13 @@
       <mat-card-content>
         <mat-form-field appearance="fill">
           <mat-label>Buscar por <b>número de pedido</b></mat-label>
-          <input matInput type="text" name="pedido" [(ngModel)]="nroPedido" />
+          <input
+            matInput
+            type="text"
+            name="pedido"
+            autofocus
+            [(ngModel)]="nroPedido"
+          />
         </mat-form-field>
       </mat-card-content>
       <mat-card-actions align="end">

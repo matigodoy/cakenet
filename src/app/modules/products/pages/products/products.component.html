@@ -1,0 +1,38 @@
+<app-layout>
+  <!-- Listado como cards de productos, solo se puede seleccionar de a un producto sin un carrito de compras. -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Productos</mat-card-title>
+      <mat-card-subtitle>Selecciona un producto</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-grid-list cols="3" rowHeight="2:1">
+        <mat-grid-tile *ngFor="let product of products">
+          <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title>{{ product.nombre }}</mat-card-title>
+                <mat-card-subtitle>{{
+                  product.precio[product.precio.length - 1].monto | currency
+                }}</mat-card-subtitle>
+                <img mat-card-md-image [src]="product.imagen" />
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{ product.descripcion }}</p>
+            </mat-card-content>
+            <mat-card-actions align="end">
+              <button
+                mat-stroked-button
+                color="primary"
+                (click)="seleccionarProducto(product)"
+              >
+                Seleccionar
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+  </mat-card>
+</app-layout>

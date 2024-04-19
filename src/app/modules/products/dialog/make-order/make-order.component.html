@@ -1,0 +1,209 @@
+<mat-stepper orientation="vertical" [linear]="true" #stepper>
+  <mat-step [stepControl]="clientFormGroup">
+    <form [formGroup]="clientFormGroup">
+      <ng-template matStepLabel>Datos del cliente</ng-template>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          placeholder="Last name, First name"
+          formControlName="nombre"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Apellido</mat-label>
+        <input
+          matInput
+          placeholder="Last name, First name"
+          formControlName="apellido"
+          required
+        />
+      </mat-form-field>
+      <!-- Direccion -->
+      <mat-form-field>
+        <mat-label>Dirección</mat-label>
+        <input
+          matInput
+          placeholder="Calle, Altura"
+          formControlName="direccion"
+          required
+        />
+      </mat-form-field>
+      <!-- Fecha Nacimiento -->
+      <mat-form-field>
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input
+          matInput
+          placeholder="dd/mm/yyyy"
+          formControlName="fechaNacimiento"
+          required
+        />
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="adressFormGroup">
+    <form [formGroup]="adressFormGroup">
+      <ng-template matStepLabel>Datos de envío</ng-template>
+      <mat-form-field>
+        <mat-label>Calle</mat-label>
+        <input
+          matInput
+          formControlName="calle"
+          placeholder="Ej. Av. Colón"
+          required
+        />
+      </mat-form-field>
+      <!-- Altura -->
+      <mat-form-field>
+        <mat-label>Altura</mat-label>
+        <input
+          matInput
+          formControlName="altura"
+          placeholder="Ej. 1300"
+          required
+        />
+      </mat-form-field>
+      <!-- Ciudad -->
+      <mat-form-field>
+        <mat-label>Ciudad</mat-label>
+        <input
+          matInput
+          formControlName="ciudad"
+          placeholder="Ej. Córdoba"
+          required
+        />
+      </mat-form-field>
+      <!-- CP -->
+      <mat-form-field>
+        <mat-label>Código Postal</mat-label>
+        <input matInput formControlName="cp" placeholder="Ej. X5001" required />
+      </mat-form-field>
+
+      <!-- Quien lo recibe? Nombre -->
+      <mat-form-field>
+        <mat-label>Nombre de quien recibe</mat-label>
+        <input
+          matInput
+          formControlName="nombre"
+          placeholder="Ej. Juan"
+          required
+        />
+      </mat-form-field>
+      <!-- franjaHorariaDesde y franjaHorariaHasta (rangepicker) -->
+      <mat-form-field class="example-form-field">
+        <mat-label>Horario de entrega</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input
+            matStartDate
+            formControlName="franjaHorariaDesde"
+            placeholder="Desde"
+            required
+          />
+          <input
+            matEndDate
+            formControlName="franjaHorariaHasta"
+            placeholder="Hasta"
+            required
+          />
+        </mat-date-range-input>
+        <mat-hint>DD/MM/YYYY – DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+      <!-- Telefono -->
+      <mat-form-field>
+        <mat-label>Teléfono</mat-label>
+        <input
+          matInput
+          formControlName="telefono"
+          placeholder="Ej. 3511234567"
+          required
+        />
+      </mat-form-field>
+      <!-- Mail -->
+      <mat-form-field>
+        <mat-label>Mail</mat-label>
+        <input matInput formControlName="mail" placeholder="Ej." required />
+      </mat-form-field>
+      <!-- Mensaje -->
+      <mat-form-field>
+        <mat-label>Indicaciones</mat-label>
+        <textarea
+          matInput
+          formControlName="mensaje"
+          placeholder="Ej."
+          required
+        ></textarea>
+      </mat-form-field>
+
+      <div>
+        <button mat-button matStepperPrevious>Anterior</button>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Paso formulario de pago -->
+  <mat-step [stepControl]="paymentFormGroup">
+    <form [formGroup]="paymentFormGroup">
+      <ng-template matStepLabel>Forma de pago</ng-template>
+      <mat-form-field>
+        <mat-label>Nombre en la tarjeta</mat-label>
+        <input
+          matInput
+          formControlName="titular"
+          placeholder="Ej. Juan Pérez"
+          required
+        />
+      </mat-form-field>
+      <!-- Numero de tarjeta -->
+      <mat-form-field>
+        <mat-label>Número de tarjeta</mat-label>
+        <input
+          matInput
+          formControlName="numero"
+          placeholder="Ej. 1234 5678 9012 3456"
+          required
+        />
+      </mat-form-field>
+      <!-- Fecha de vencimiento -->
+      <mat-form-field>
+        <mat-label>Fecha de vencimiento</mat-label>
+        <input
+          matInput
+          formControlName="vencimiento"
+          placeholder="MM/AA"
+          required
+        />
+      </mat-form-field>
+      <!-- CVC -->
+      <mat-form-field>
+        <mat-label>CVC</mat-label>
+        <input
+          matInput
+          formControlName="codigoSeguridad"
+          placeholder="Ej. 123"
+          required
+        />
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Anterior</button>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Confirmar pedido</ng-template>
+    <p>Estás seguro que deseas confirmar el pedido?</p>
+    <div>
+      <button mat-button matStepperPrevious>Anterior</button>
+      <button mat-raised-button (click)="ordenar()">Ordenar</button>
+    </div>
+  </mat-step>
+</mat-stepper>

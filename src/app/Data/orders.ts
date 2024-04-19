@@ -1,4 +1,10 @@
-import { Estados, Pedido, TipoPago, TipoTarjeta } from '../Models/models';
+import {
+  Estados,
+  Pedido,
+  Producto,
+  TipoPago,
+  TipoTarjeta,
+} from '../Models/models';
 
 export const orders: Pedido[] = [
   {
@@ -150,5 +156,128 @@ export const orders: Pedido[] = [
         },
       ],
     },
+  },
+];
+
+export const productos: Producto[] = [
+  {
+    id: 1,
+    imagen: 'https://via.placeholder.com/150',
+    nombre: 'Producto 1',
+    codigo: 1,
+    precio: [
+      {
+        id: 1,
+        monto: 100,
+        fecha: new Date('2021-01-01'),
+      },
+    ],
+    descripcion: 'Descripcion 1',
+    diasPreparacion: 1,
+  },
+  {
+    id: 2,
+    imagen: 'https://via.placeholder.com/150',
+    nombre: 'Producto 2',
+    codigo: 2,
+    precio: [
+      {
+        id: 2,
+        monto: 200,
+        fecha: new Date('2021-01-01'),
+      },
+    ],
+    descripcion: 'Descripcion 2',
+    diasPreparacion: 2,
+  },
+  {
+    id: 3,
+    imagen: 'https://via.placeholder.com/150',
+    nombre: 'Producto 3',
+    codigo: 3,
+    precio: [
+      {
+        id: 3,
+        monto: 300,
+        fecha: new Date('2021-01-01'),
+      },
+    ],
+    descripcion: 'Descripcion 3',
+    diasPreparacion: 3,
+  },
+  {
+    id: 4,
+    imagen: 'https://via.placeholder.com/150',
+    nombre: 'Producto 4',
+    codigo: 4,
+    precio: [
+      {
+        id: 4,
+        monto: 400,
+        fecha: new Date('2021-01-01'),
+      },
+    ],
+    descripcion: 'Descripcion 4',
+    diasPreparacion: 4,
+  },
+  {
+    id: 5,
+    imagen: 'https://via.placeholder.com/150',
+    nombre: 'Producto 5',
+    codigo: 5,
+    precio: [
+      {
+        id: 5,
+        monto: 500,
+        fecha: new Date('2021-01-01'),
+      },
+    ],
+    descripcion: 'Descripcion 5',
+    diasPreparacion: 5,
+  },
+  {
+    id: 6,
+    imagen: 'https://via.placeholder.com/150',
+    nombre: 'Producto 6',
+    codigo: 6,
+    precio: [
+      {
+        id: 6,
+        monto: 600,
+        fecha: new Date('2021-01-01'),
+      },
+    ],
+    descripcion: 'Descripcion 6',
+    diasPreparacion: 6,
+  },
+  {
+    id: 7,
+    imagen: 'https://via.placeholder.com/150',
+    nombre: 'Producto 7',
+    codigo: 7,
+    precio: [
+      {
+        id: 7,
+        monto: 700,
+        fecha: new Date('2021-01-01'),
+      },
+    ],
+    descripcion: 'Descripcion 7',
+    diasPreparacion: 7,
+  },
+  {
+    id: 8,
+    imagen: 'https://via.placeholder.com/150',
+    nombre: 'Producto 8',
+    codigo: 8,
+    precio: [
+      {
+        id: 8,
+        monto: 800,
+        fecha: new Date('2021-01-01'),
+      },
+    ],
+    descripcion: 'Descripcion 8',
+    diasPreparacion: 8,
   },
 ];

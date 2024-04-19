@@ -16,10 +16,13 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./modules/orders/orders.module').then((m) => m.OrdersModule),
   },
-  // {
-  //     path: 'products',
-  //     loadChildren: () => import('./modules/products/products.module').then(m => m.ProductsModule)
-  // },
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('./modules/products/products.module').then(
+        (m) => m.ProductsModule
+      ),
+  },
   // {
   //     path: 'customers',
   //     loadChildren: () => import('./modules/customers/customers.module').then(m => m.CustomersModule)
