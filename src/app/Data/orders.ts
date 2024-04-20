@@ -1,5 +1,6 @@
 import {
   Estados,
+  Pasteleria,
   Pedido,
   Producto,
   TipoPago,
@@ -289,5 +290,131 @@ export const productos: Producto[] = [
     ],
     descripcion: 'Ideal para cumpleaños de halloween',
     diasPreparacion: 8,
+  },
+];
+
+export const pastelerias: Pasteleria[] = [
+  {
+    id: 1,
+    nombre: 'Pasteleria San Jorge',
+    productos: [
+      {
+        id: 1,
+        imagen: 'https://picsum.photos/150',
+        nombre: 'Producto 1',
+        codigo: 1,
+        precio: [
+          {
+            id: 1,
+            monto: 100,
+            fecha: new Date('2021-01-01'),
+          },
+        ],
+        descripcion: 'Descripcion 1',
+        diasPreparacion: 1,
+      },
+    ],
+    direccion: {
+      id: 1,
+      calle: 'Av. Colon 5001',
+      altura: 1,
+      ciudad: {
+        id: 1,
+        nombre: 'Ciudad 1',
+        provincia: {
+          id: 1,
+          nombre: 'Provincia 1',
+          pais: {
+            id: 1,
+            nombre: 'Pais 1',
+          },
+        },
+      },
+      cp: 'X5001',
+    },
+    radioEntrega: 1,
+    pedidos: [],
+  },
+  {
+    id: 2,
+    nombre: 'Pasteleria San Martin',
+    productos: [
+      {
+        id: 1,
+        imagen: 'https://picsum.photos/150',
+        nombre: 'Producto 1',
+        codigo: 1,
+        precio: [
+          {
+            id: 1,
+            monto: 100,
+            fecha: new Date('2021-01-01'),
+          },
+        ],
+        descripcion: 'Descripcion 1',
+        diasPreparacion: 1,
+      },
+    ],
+    direccion: {
+      id: 1,
+      calle: 'Juan B. Justo 103',
+      altura: 1,
+      ciudad: {
+        id: 1,
+        nombre: 'Ciudad 1',
+        provincia: {
+          id: 1,
+          nombre: 'Provincia 1',
+          pais: {
+            id: 1,
+            nombre: 'Pais 1',
+          },
+        },
+      },
+      cp: 'X5001',
+    },
+    radioEntrega: 1,
+    pedidos: [],
+  },
+  {
+    id: 3,
+    nombre: 'Pasteleria San Pedro',
+    productos: [
+      {
+        id: 1,
+        imagen: 'https://picsum.photos/150',
+        nombre: 'Producto 1',
+        codigo: 1,
+        precio: [
+          {
+            id: 1,
+            monto: 100,
+            fecha: new Date('2021-01-01'),
+          },
+        ],
+        descripcion: 'Descripcion 1',
+        diasPreparacion: 1,
+      },
+    ],
+    direccion: {
+      id: 1,
+      calle: 'Av. Colon 5001',
+      altura: 1,
+      ciudad: {
+        id: 1,
+        nombre: 'Ciudad 1',
+        provincia: {
+          id: 1,
+          nombre: 'Provincia 1',
+          pais: {
+            id: 1,
+            nombre: 'Pais 1',
+          },
+        },
+      },
+      cp: 'X5001',
+    },
+    radioEntrega: 1,
+    pedidos: [],
   },
 ];

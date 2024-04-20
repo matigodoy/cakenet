@@ -1,0 +1,66 @@
+<div class="container">
+  <!-- Formulario ubicación actual (país, ciudad, codigo postal) -->
+  <mat-stepper orientation="vertical" [linear]="true" #stepper>
+    <mat-step [stepControl]="actualLocationForm">
+      <form [formGroup]="actualLocationForm">
+        <ng-template matStepLabel>Ubicación actual</ng-template>
+        <mat-form-field class="form_field">
+          <mat-label>País</mat-label>
+          <input
+            matInput
+            formControlName="pais"
+            placeholder="Ej. Argentina"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field class="form_field">
+          <mat-label>Ciudad</mat-label>
+          <input
+            matInput
+            formControlName="ciudad"
+            placeholder="Ej. Córdoba"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field class="form_field">
+          <mat-label>Código Postal</mat-label>
+          <input
+            matInput
+            formControlName="codigoPostal"
+            placeholder="Ej. 5000"
+            required
+          />
+        </mat-form-field>
+
+        <div>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <!-- Formulario pastelería -->
+    <mat-step [stepControl]="bakeryForm">
+      <form [formGroup]="bakeryForm">
+        <ng-template matStepLabel>Pastelería</ng-template>
+        <mat-form-field class="form_field">
+          <mat-label>Pastelería</mat-label>
+          <mat-select formControlName="pasteleria" required>
+            <mat-option *ngFor="let bakery of bakeries" [value]="bakery">
+              {{ bakery.nombre + " (" + bakery.direccion.calle + ")" }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="onChooseBakery()"
+            [disabled]="!bakeryForm.valid"
+          >
+            Elegir
+          </button>
+          <button mat-raised-button (click)="onCancel()">Cancelar</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-stepper>
+</div>

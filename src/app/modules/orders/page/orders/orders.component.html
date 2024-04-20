@@ -4,12 +4,13 @@
       <mat-card-title>Pedidos</mat-card-title>
       <mat-card-subtitle>Aquí podrás realizar nuevos pedidos</mat-card-subtitle>
     </mat-card-header>
+    <!-- [routerLink]="['/products']" -->
     <mat-card-actions align="end">
       <button
         mat-stroked-button
         color="primary"
-        [routerLink]="['/products']"
         routerLinkActive="router-link-active"
+        (click)="chooseBakery()"
       >
         Nuevo
       </button>
