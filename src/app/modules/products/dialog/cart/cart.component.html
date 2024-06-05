@@ -1,0 +1,40 @@
+<mat-list>
+  <div mat-subheader>Carrito de compras</div>
+  @for (item of cart; track item) {
+  <mat-list-item>
+    <mat-icon matListItemIcon>cake</mat-icon>
+    <div matListItemTitle>{{ item.producto.nombre }}</div>
+    <div matListItemLine>Cantidad: {{ item.cantidad }}</div>
+    <div matListItemLine>
+      Subtotal:
+      {{
+        item.producto.precio[item.producto.precio.length - 1].monto *
+          item.cantidad | currency
+      }}
+    </div>
+  </mat-list-item>
+  }
+
+  <mat-divider></mat-divider>
+  <div mat-subheader>Total</div>
+  <mat-list-item>
+    <mat-icon matListItemIcon>attach_money</mat-icon>
+    <div matListItemTitle>Total</div>
+    <div matListItemLine>
+      {{ getTotal() | currency }}
+    </div>
+  </mat-list-item>
+
+  <mat-divider></mat-divider>
+
+  <mat-list-item>
+    <div class="buttons">
+      <button mat-button color="primary" (click)="onCartClearClick()">
+        Limpiar
+      </button>
+      <button mat-raised-button color="primary" (click)="onCartCheckoutClick()">
+        Comprar
+      </button>
+    </div>
+  </mat-list-item>
+</mat-list>

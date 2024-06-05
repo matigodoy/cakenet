@@ -23,13 +23,25 @@
               <p class="ellipsis">{{ product.descripcion }}</p>
             </mat-card-content>
             <mat-card-actions align="end">
-              <button
-                mat-stroked-button
-                color="primary"
-                (click)="seleccionarProducto(product)"
+              <form
+                (submit)="onProductCartAddClick(product.cantidad, product.id)"
               >
-                Seleccionar
-              </button>
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="number"
+                    min="1"
+                    max="100"
+                    placeholder="Cantidad"
+                    [(ngModel)]="product.cantidad"
+                    name="cantidad"
+                    required
+                  />
+                </mat-form-field>
+                <button mat-stroked-button color="primary" type="submit">
+                  Agregar
+                </button>
+              </form>
             </mat-card-actions>
           </mat-card>
         </mat-grid-tile>
@@ -37,3 +49,13 @@
     </mat-card-content>
   </mat-card>
 </app-layout>
+
+<!-- viewChild snackBarTemplate -->
+<ng-template #snackBarTemplate>
+  <div class="snackbar">
+    <span>Producto agregado al carrito</span>
+    <button mat-raised-button color="primary" (click)="openCart()">
+      Ver carrito
+    </button>
+  </div>
+</ng-template>

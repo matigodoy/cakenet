@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Pedido } from '../../../../Models/models';
+import { Carrito, Pedido } from '../../../../Models/models';
 import { MaterialModule } from '../../../material/material.module';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../../shared/shared.module';
@@ -29,6 +29,7 @@ export class MakeOrderComponent {
   constructor(private _formBuilder: FormBuilder) {}
 
   @Input() productoId: number | null = null;
+  @Input() cart: Carrito[] = [];
   @Output() pedido = new EventEmitter<any>();
   // order: Pedido = {
   //       producto: {

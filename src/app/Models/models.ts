@@ -116,6 +116,7 @@ export interface Producto {
   codigo: number;
   precio: Precio[];
   descripcion: string;
+  cantidad?: number;
   diasPreparacion: number;
 }
 
@@ -144,4 +145,9 @@ export interface Pedido {
   envio: DetalleEnvio;
   pago: Pago;
   fechaDeseadaEntrega: Date;
+}
+
+export interface Carrito {
+  producto: Producto;
+  cantidad: number;
 }

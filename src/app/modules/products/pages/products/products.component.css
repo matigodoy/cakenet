@@ -7,3 +7,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* <div class="snackbar">
+    <span>Producto agregado al carrito</span>
+    <button mat-icon-button (click)="openCart()">
+      <mat-icon>Ver carrito</mat-icon>
+    </button>
+  </div> */
+
+.snackbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

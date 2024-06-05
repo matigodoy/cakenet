@@ -17,6 +17,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
@@ -40,6 +41,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatStepperModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatBottomSheetModule,
   ],
   providers: [MatNativeDateModule],
   exports: [
@@ -61,6 +63,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatStepperModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatBottomSheetModule,
   ],
 })
 export class MaterialModule {}

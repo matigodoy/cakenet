@@ -13,6 +13,8 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { CartComponent } from '../../../products/dialog/cart/cart.component';
 
 @Component({
   selector: 'app-header',
@@ -36,9 +38,18 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+  constructor(
+    private bottomSheet: MatBottomSheet,
+    private _dialog: MatDialog
+  ) {}
+
   isMenuOpened = false;
 
   openMenu() {
     this.isMenuOpened = true;
+  }
+
+  onCartClick() {
+    this.bottomSheet.open(CartComponent);
   }
 }
