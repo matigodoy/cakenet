@@ -14,7 +14,10 @@ export class AuthService {
     this.loading$.next(true);
     const loginPromise = new Promise((resolve, reject) => {
       if (username === 'admin' && password === 'admin') {
-        resolve({ username: 'admin', token: '123456' });
+        resolve({ username: 'admin', token: '123456', role: 'admin' });
+        this.loading$.next(false);
+      } else if (username === 'user' && password === 'user') {
+        resolve({ username: 'user', token: '123456', role: 'user' });
         this.loading$.next(false);
       } else {
         reject('Invalid credentials');
@@ -22,5 +25,14 @@ export class AuthService {
       }
     });
     return loginPromise;
+  }
+
+  async getUserRole(): Promise<string> {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    return user.role || 'user';
+  }
+
+  async isAdmin() {
+    return (await this.getUserRole()) === 'admin';
   }
 }

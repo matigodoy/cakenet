@@ -61,11 +61,30 @@
       </mat-list>
     </mat-card-content>
     <mat-card-actions align="end">
-      <button mat-flat-button color="primary" disabled>
-        Cambiar de estado
-      </button>
-      <button mat-stroked-button color="primary" [routerLink]="['/orders']">
+      <button
+        mat-stroked-button
+        color="primary"
+        [routerLink]="['/orders']"
+        class="mr-3"
+      >
         Regresar
+      </button>
+      <button
+        mat-flat-button
+        color="warn"
+        class="mr-3"
+        (click)="cancelarPedido()"
+      >
+        Cancelar pedido
+      </button>
+      <button
+        mat-flat-button
+        color="primary"
+        [disabled]="!isAdmin"
+        class="mr-3"
+        (click)="cambiarEstado()"
+      >
+        Cambiar de estado
       </button>
     </mat-card-actions>
   </mat-card>
@@ -95,3 +114,59 @@
   </mat-card>
   }
 </app-layout>
+
+<ng-template #cancelarPedidoTemplate>
+  <!-- ¿Seguro que deseas cancelar el pedido? + Botón aceptar y cancelar -->
+  <h2 mat-dialog-title>Cancelar pedido</h2>
+  <mat-dialog-content>
+    <p>¿Seguro que deseas cancelar el pedido?</p>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button
+      mat-button
+      color="warn"
+      [mat-dialog-close]="true"
+      cdkFocusInitial
+      (click)="cancelarPedido(true)"
+    >
+      Aceptar
+    </button>
+  </mat-dialog-actions>
+</ng-template>
+
+<ng-template #cambiarEstadoTemplate>
+  <!-- Cambiar estado del pedido + Botón aceptar y cancelar -->
+  <h2 mat-dialog-title>Cambiar estado del pedido</h2>
+  <mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Estado</mat-label>
+      <mat-select
+        [(value)]="estado"
+        name="estado"
+        required
+        #estadoControl="ngModel"
+        [(ngModel)]="estado"
+      >
+        <mat-option *ngFor="let estado of estados" [value]="estado">
+          {{ estado }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="estadoControl.invalid && estadoControl.touched">
+        Debes seleccionar un estado
+      </mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button
+      mat-button
+      color="primary"
+      [mat-dialog-close]="true"
+      cdkFocusInitial
+      (click)="cambiarEstado(true)"
+    >
+      Aceptar
+    </button>
+  </mat-dialog-actions>
+</ng-template>

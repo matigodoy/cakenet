@@ -45,11 +45,14 @@ export class LoginFormComponent {
 
   async login() {
     await this.auth.login(this.userName, this.password).then(
-      () => {
+      (res) => {
+        localStorage.setItem('user', JSON.stringify(res));
         this.router.navigate(['/home']);
       },
       (error: string) => {
-        this.snackbar.open('Ocurrió un error');
+        this.snackbar.open('Ocurrió un error', undefined, {
+          duration: 1000,
+        });
       }
     );
   }
